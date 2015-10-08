@@ -14,3 +14,23 @@ console.log(
     }
 })
 );
+
+console.log(1+ '1'+'2');
+console.log(1+ +'2'+'2');
+console.log(1+ -'1'+'2');
+console.log(+'1'+ '1'+'2');
+console.log('A' - 'B'+'2');
+console.log('A' - 'B'+2);
+
+//recursive
+//stack overflow
+var list = readBigList();
+
+var nextListItem = function(){
+	var item = list.pop();
+
+	if(item){
+		//process
+		nextListItem();//setTimeout(nextListItem,0) to prevent stack overflow
+	}
+}
